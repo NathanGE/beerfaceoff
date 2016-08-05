@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: beerfaceoff_production
-  username: Nathan Elliott
+  username: nathanelliott
   password: <%= ENV['BEERFACEOFF_DATABASE_PASSWORD'] %>
