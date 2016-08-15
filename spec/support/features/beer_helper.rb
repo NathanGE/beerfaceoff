@@ -1,17 +1,5 @@
-require 'rails_helper'
-
-RSpec.describe Beer, type: :model do
-  describe '#top_ranked_beers' do
-    it 'returns the top 5 highest upvoted beers' do
-      create_beers_with_upvotes
-
-      result = Beer.top_ranked_beers
-
-      expect(result.map(&:name)).to eq %w(beer1 beer4 beer5 beer6 beer7)
-    end
-  end
-
-  def create_beers_with_upvotes
+module Features
+   def create_beers_with_upvotes
     create(:beer, name: 'beer1', brewer: 'brewer1', abv: 5.0, ibu: 30, upvotes: 100)
     create(:beer, name: 'beer2', brewer: 'brewer2', abv: 5.0, ibu: 30, upvotes: 50)
     create(:beer, name: 'beer3', brewer: 'brewer3', abv: 5.0, ibu: 30, upvotes: 40)
