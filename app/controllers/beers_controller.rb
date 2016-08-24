@@ -14,7 +14,13 @@ class BeersController < ApplicationController
   end
 
   def show
-    @beer = Beer.find(params[:id])
+    @beer = Beer.find_by_id(params[:id])
+  end
+
+  def destroy
+    @beer = Beer.find_by_id(params[:id])
+    @beer.delete
+    redirect_to root_path
   end
 
   private
